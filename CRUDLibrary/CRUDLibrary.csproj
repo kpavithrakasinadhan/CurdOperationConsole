@@ -1,9 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="SQL\**" />
+    <EmbeddedResource Remove="SQL\**" />
+    <None Remove="SQL\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.35" />
@@ -11,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="sql folder\" />
+    <ProjectReference Include="..\CurdOperationConsole\CurdOperationConsole.csproj" />
   </ItemGroup>
 
 </Project>
